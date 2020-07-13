@@ -6,11 +6,11 @@ This is a repo that contains code to deploy a sample UI and infrastructure to st
 
 This example showcases a key piece you can use to construct your API Layer to consume Amazon Personalize recommendations and produce real time events
 
-As we can see bellow this is the architecture that you will be deploying from this project.
+As we can see below this is the architecture that you will be deploying from this project.
 
 ![Architecture Diagram](images/architecture.png)
 
-**Note:** The Amazon Personalize Campaigns and Event trackers need to be deployed independently beforehand for you to complete this tutorial. You can deploy your Amazon personalize Campaign by using the following automation example under the MLOps folder, or by leveraging the getting started folder.
+**Note:** The Amazon Personalize Campaigns and Event trackers need to be deployed independently beforehand for you to complete this tutorial. You can deploy your Amazon Personalize Campaign by using the following automation example under the MLOps folder, or by leveraging the getting started folder.
 
 ## Prerequisites
 
@@ -23,9 +23,9 @@ This will install the necessary tools to build, deploy, and locally test your pr
 
 ### Create your Personalize Components 
 
-**Create** an Amazon Personalize Campaign and attach an event tracker to it [instructions](https://github.com/aws-samples/amazon-personalize-samples/tree/master/getting_started).
+**Create** an Amazon Personalize Campaign and attach an event tracker to it, after following our getting started [instructions](https://github.com/aws-samples/amazon-personalize-samples/tree/master/getting_started).
 
-You could also automate this part by leveraging this MLOps [example](https://github.com/aws-samples/amazon-personalize-samples/tree/master/operations/ml_ops)
+You could also automate this part by leveraging this MLOps [example](https://github.com/aws-samples/amazon-personalize-samples/tree/master/next_steps/operations/ml_ops)
 
 ## Build and Deploy
 
@@ -89,6 +89,16 @@ For the POST endpoint you need so send an event similar to the following in the 
     "UserId": "USERID"
 }
 ```
+
+## Summary
+
+Now that you have this architecture in your account, you can consume Amazon Personalize recommendations over the API Gateway GET endpoints and stream real time interactions data to the POST endpoint. 
+
+There are two additional features to this architecture:
+
+- A Dynamo DB table which includes your user's history. This table contains all the historical recommendations provided by Amazon Personalize to your user, as well as the events that user streamed to the Event Tracker.
+- A S3 bucket containing your events persisted from your Kinesis Stream. You can run analysis on this bucket by using other AWS services such as Glue and Athena. For example you can follow this [blog](https://aws.amazon.com/blogs/big-data/build-and-automate-a-serverless-data-lake-using-an-aws-glue-trigger-for-the-data-catalog-and-etl-jobs/) on how to automate an ETL pipeline.
+
 
 
 ## Next Steps
