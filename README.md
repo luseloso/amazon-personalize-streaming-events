@@ -53,13 +53,17 @@ In order to deploy the project you will need to run the following commands:
 **GET recommendations example:**
 
 *Query Paramater:* userId=USERID
+
 *Endpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/recommendations`
+
 *Constructed Endpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/recommendations?userId=USERID`
 
 **GET history example:**
 
 *Query Paramater:* userId=USERID
+
 *Endpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/history`
+
 *Constructed Endpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/history?userId=USERID`
 
 **POST event example**
