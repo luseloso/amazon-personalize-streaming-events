@@ -6,10 +6,10 @@ var dynamoClient = new AWS.DynamoDB.DocumentClient();
 exports.handler = (event, context, callback) => {
     
     console.log(JSON.stringify(event,null,3))
-    console.log(JSON.parse(event.body))
+
+    // We are getting the user ID from the query string parameters
+    var userId= event.queryStringParameters.userId;
     
-    var userId= 'JHartley';
-    // var body=JSON.parse(event.body)
     var params = {
         campaignArn: process.env.CAMPAIGN_ARN, /* required */
         // userId: body.userId

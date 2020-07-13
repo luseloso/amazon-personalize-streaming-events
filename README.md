@@ -10,7 +10,7 @@ As we can see bellow this is the architecture that you will be deploying from th
 
 ![Architecture Diagram](images/architecture.png)
 
-**Note:** The Amazon Personalize Campaigns and Event trackers need to be deployed independently beforehand for you to complete this tutorial
+**Note:** The Amazon Personalize Campaigns and Event trackers need to be deployed independently beforehand for you to complete this tutorial. You can deploy your Amazon personalize Campaign by using the following automation example under the MLOps folder, or by leveraging the getting started folder.
 
 ## Prerequisites
 
@@ -39,7 +39,7 @@ In order to deploy the project you will need to run the following commands:
     - `sam build` 
 4. Deploy your project. SAM offers a guided deployment option, note that you will need to provide your email address as a parameter to receive a notification.
     - `sam deploy --guided`
-5. Enter your Personalize Campaign ARN and EventTracker ID
+5. Enter the S3 bucket where you will like to store your events data, the Personalize Campaign ARN and EventTracker ID.
 
 ## Testing the endpoints
 
@@ -50,9 +50,26 @@ In order to deploy the project you will need to run the following commands:
     2. Get History Endpoint
     3. Post Events Endopoint
 
-For the GET endpoints you only need to send the userId in the body of the request:
+For the GET endpoints you only need to send the userId in the Query Paramaters of the request:
 
-For the POST endpoint you need so send an event similar to the following in the body of the request:
+**GET recommendations example:**
+`https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/recommendations?userId=USERID`
+
+**GET history example:**
+`https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/history?userId=USERID`
+
+For the POST endpoint you need so send an event similar to the following in the *body* of the request:
+
+`{
+    "Event":{
+        "itemId": "british-airways",
+        "eventValue": 10,
+        "cabinType": "First Class"
+    },
+    "SessionId": "abcdekjasbdfubsad",
+    "EventType": "RATING",
+    "UserId": "JHartley"
+}`
 
 
 ## Next Steps

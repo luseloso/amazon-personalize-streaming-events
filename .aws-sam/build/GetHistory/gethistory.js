@@ -2,7 +2,10 @@ var AWS = require("aws-sdk");
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = (event, context, callback) => {
-  var userId= 'JHartley';
+      // We are getting the user ID from the query string parameters
+
+  var userId= event.queryStringParameters.userId;
+  
   var paramsQuery = {
     TableName: process.env.DDB_TABLE,
     KeyConditionExpression: "userId = :userId",
