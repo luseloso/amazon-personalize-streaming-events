@@ -60,16 +60,18 @@ For the GET endpoints you only need to send the userId in the Query Paramaters o
 
 For the POST endpoint you need so send an event similar to the following in the *body* of the request:
 
-`{&nbsp;
-    "Event":{&nbsp;
-        "itemId": "ITEMID",&nbsp;
-        "eventValue": EVENTV-ALUE,&nbsp;
-        "CONTEXT": "VALUE"&nbsp; //optional
+```
+{
+    "Event":{
+        "itemId": "ITEMID",
+        "eventValue": EVENT-VALUE,
+        "CONTEXT": "VALUE" //optional
     },
-    "SessionId": "SESSION-ID-IDENTIFIER",&nbsp;
-    "EventType": "YOUR-EVENT-TYPE",&nbsp;
-    "UserId": "USERID"&nbsp;
-}`
+    "SessionId": "SESSION-ID-IDENTIFIER",
+    "EventType": "YOUR-EVENT-TYPE",
+    "UserId": "USERID"
+}
+```
 
 
 ## Next Steps
