@@ -50,19 +50,21 @@ In order to deploy the project you will need to run the following commands:
     2. Get History Endpoint
     3. Post Events Endopoint
 
-For the GET endpoints you only need to send the userId in the Query Paramaters of the request:
-
 **GET recommendations example:**
 
-`https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/recommendations?userId=USERID`
+*Query Paramater:* userId=USERID
+*Endpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/recommendations`
+*Constructed Endpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/recommendations?userId=USERID`
 
 **GET history example:**
 
-`https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/history?userId=USERID`
-
-For the POST endpoint you need so send an event similar to the following in the *body* of the request:
+*Query Paramater:* userId=USERID
+*Endpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/history`
+*Constructed Endpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/history?userId=USERID`
 
 **POST event example**
+
+For the POST endpoint you need so send an event similar to the following in the *body* of the request:
 
 *Enpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/history`
 
