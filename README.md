@@ -62,6 +62,11 @@ For the GET endpoints you only need to send the userId in the Query Paramaters o
 
 For the POST endpoint you need so send an event similar to the following in the *body* of the request:
 
+**POST event example**
+
+*Enpoint:* `https://XXXXXX.execute-api.us-east-1.amazonaws.com/se-personalize-dev/history`
+
+*Body:*
 ```
 {
     "Event":{

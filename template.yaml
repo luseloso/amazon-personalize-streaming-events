@@ -575,3 +575,10 @@ Resources:
         - !Ref LambdaRole
               
 # Outputs:
+Outputs:
+  GET-RecommendationsApiGatewayInvokeURL:
+    Value: !Sub "https://${ApiGatewayEndpoint}.execute-api.${AWS::Region}.amazonaws.com/${se-personalize-dev}/recommendations"
+  GET-HistoryApiGatewayInvokeURL:
+    Value: !Sub "https://${ApiGatewayEndpoint}.execute-api.${AWS::Region}.amazonaws.com/${se-personalize-dev}/history"
+  POST-EventsApiGatewayInvokeURL:
+    Value: !Sub "https://${ApiGatewayEndpoint}.execute-api.${AWS::Region}.amazonaws.com/${se-personalize-dev}/events"
